@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IFRS 18: What Every CFO Needs to Know Before January 2027</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #1a1a2e;
+    --ink-light: #3d3d5c;
+    --accent: #c8973a;
+    --accent-light: #f0d9a8;
+    --rule: #e8e0d0;
+    --bg: #faf8f4;
+    --bg-card: #ffffff;
+    --pullquote-bg: #1a1a2e;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 18px;
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── MASTHEAD ── */
+  .masthead {
+    background: var(--ink);
+    padding: 18px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .masthead-label {
+    font-family: 'Source Serif 4', serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .masthead-date {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    color: #888;
+    text-transform: uppercase;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--ink);
+    padding: 70px 40px 60px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: 'IFRS 18';
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Playfair Display', serif;
+    font-size: 200px;
+    font-weight: 900;
+    color: rgba(255,255,255,0.03);
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+  }
+  .hero-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-kicker {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+    color: var(--accent);
+    border-top: 2px solid var(--accent);
+    padding-top: 8px;
+    margin-bottom: 28px;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(34px, 5vw, 56px);
+    font-weight: 700;
+    line-height: 1.15;
+    color: #ffffff;
+    margin-bottom: 24px;
+    letter-spacing: -0.5px;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--accent-light);
+  }
+  .hero-sub {
+    font-size: 17px;
+    color: #b0a898;
+    line-height: 1.7;
+    font-style: italic;
+    max-width: 580px;
+    border-left: 3px solid var(--accent);
+    padding-left: 20px;
+  }
+
+  /* ── BYLINE STRIP ── */
+  .byline-strip {
+    background: var(--accent);
+    padding: 14px 40px;
+  }
+  .byline-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .byline-avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: var(--ink);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+  .byline-text {
+    font-size: 13px;
+    color: var(--ink);
+  }
+  .byline-name {
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.3px;
+  }
+
+  /* ── CONTENT ── */
+  .content-wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 60px 40px 80px;
+  }
+
+  /* Section headers */
+  .section-head {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 52px 0 20px;
+  }
+  .section-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 900;
+    color: var(--rule);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.3;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 6px;
+  }
+
+  p {
+    margin-bottom: 22px;
+    color: var(--ink-light);
+    font-weight: 300;
+  }
+  p strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  /* Opening paragraph */
+  .opening {
+    font-size: 20px;
+    line-height: 1.7;
+    color: var(--ink);
+    font-weight: 400;
+    margin-bottom: 32px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  /* Pull quote */
+  .pullquote {
+    background: var(--pullquote-bg);
+    margin: 40px -20px;
+    padding: 36px 40px;
+    position: relative;
+  }
+  .pullquote::before {
+    content: '\201C';
+    font-family: 'Playfair Display', serif;
+    font-size: 100px;
+    color: var(--accent);
+    position: absolute;
+    top: -10px;
+    left: 30px;
+    line-height: 1;
+    opacity: 0.6;
+  }
+  .pullquote p {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    line-height: 1.55;
+    color: #ffffff;
+    font-style: italic;
+    font-weight: 400;
+    margin: 0;
+    padding-left: 10px;
+  }
+
+  /* Consideration cards */
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 28px 0 36px;
+  }
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    border-top: 3px solid var(--accent);
+    padding: 22px 22px 18px;
+  }
+  .card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 10px;
+    letter-spacing: 0.3px;
+  }
+  .card p {
+    font-size: 14px;
+    line-height: 1.65;
+    margin: 0;
+    color: var(--ink-light);
+  }
+
+  /* Stress-test box */
+  .stress-box {
+    background: var(--bg-card);
+    border: 2px solid var(--ink);
+    padding: 34px 36px;
+    margin: 40px 0;
+    position: relative;
+  }
+  .stress-box::before {
+    content: 'CFO STRESS-TEST';
+    position: absolute;
+    top: -11px;
+    left: 24px;
+    background: var(--accent);
+    color: var(--ink);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    padding: 3px 12px;
+  }
+  .stress-box ol {
+    padding-left: 22px;
+  }
+  .stress-box ol li {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--ink-light);
+    margin-bottom: 12px;
+    padding-left: 6px;
+    font-style: italic;
+  }
+  .stress-box ol li::marker {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 17px;
+  }
+
+  /* Closing */
+  .closing {
+    margin-top: 48px;
+    padding-top: 32px;
+    border-top: 2px solid var(--ink);
+  }
+  .closing p {
+    font-size: 17px;
+    color: var(--ink);
+    font-weight: 400;
+  }
+  .closing .final-line {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-top: 10px;
+    font-style: italic;
+  }
+
+  /* Author card */
+  .author-card {
+    background: var(--ink);
+    padding: 36px 40px;
+    max-width: 760px;
+    margin: 0 auto 0;
+  }
+  .author-card-inner {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+  }
+  .author-card-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--ink);
+    flex-shrink: 0;
+  }
+  .author-card-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 4px;
+  }
+  .author-card-title {
+    font-size: 12px;
+    color: var(--accent-light);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .author-card-bio {
+    font-size: 13px;
+    color: #999;
+    line-height: 1.65;
+  }
+
+  /* Footer */
+  .footer {
+    background: #111;
+    text-align: center;
+    padding: 20px 40px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #444;
+  }
+
+  @media (max-width: 600px) {
+    .masthead, .byline-strip, .hero { padding-left: 24px; padding-right: 24px; }
+    .content-wrap { padding: 40px 24px 60px; }
+    .cards { grid-template-columns: 1fr; }
+    .pullquote { margin: 32px -4px; padding: 28px 24px; }
+    .author-card { padding: 28px 24px; }
+    .hero h1 { font-size: 32px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <span class="masthead-label">Finance Leadership Series</span>
+  <span class="masthead-date">April 2026</span>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <span class="hero-kicker">IFRS 18 · Effective January 2027</span>
+    <h1>What Every CFO Needs to Know <em>Before</em> January 2027</h1>
+    <p class="hero-sub">The most significant redesign of financial statement presentation in a generation is nine months away. Most finance teams are not ready.</p>
+  </div>
+</div>
+
+<!-- BYLINE -->
+<div class="byline-strip">
+  <div class="byline-inner">
+    <div class="byline-avatar">AK</div>
+    <div class="byline-text">
+      <div class="byline-name">Aswin Kumar ACA</div>
+      Senior Finance Leader · Chartered Accountant · Bengaluru
+    </div>
+  </div>
+</div>
+
+<!-- CONTENT -->
+<div class="content-wrap">
+
+  <p class="opening">
+    IFRS 18 is not a tweak. Issued by the IASB in April 2024, it replaces IAS 1 — the standard that has governed how companies present their financial statements for decades — and takes mandatory effect for annual periods beginning <strong>1 January 2027</strong>. What changes is not how you measure transactions, but how you communicate them. And for CFOs, Controllers, and Finance Directors in MNCs and GCCs, the implications run deeper than a revised income statement format.
+  </p>
+
+  <!-- SECTION 1 -->
+  <div class="section-head">
+    <span class="section-number">01</span>
+    <span class="section-title">A Restructured Income Statement</span>
+  </div>
+
+  <p>
+    The most operationally disruptive change is the mandatory three-category structure for the statement of profit or loss. IFRS 18 requires all income and expenses to be classified as <strong>operating</strong>, <strong>investing</strong>, or <strong>financing</strong> — with a newly defined <em>operating profit</em> subtotal that every company must now present.
+  </p>
+
+  <p>
+    Critically, results of equity-accounted investees — joint ventures, associates — are no longer part of operating profit. They move to the investing category. For MNCs with significant JV structures or intercompany financing arrangements, this reclassification is not cosmetic. It will alter reported operating profit, with downstream consequences for management incentive structures, debt covenant calculations, and KPI benchmarking.
+  </p>
+
+  <div class="pullquote">
+    <p>For companies with joint ventures or intercompany financing, the reclassification will alter reported operating profit — with direct consequences for covenants, KPIs, and bonus structures.</p>
+  </div>
+
+  <!-- SECTION 2 -->
+  <div class="section-head">
+    <span class="section-number">02</span>
+    <span class="section-title">MPMs Enter the Audited Statements</span>
+  </div>
+
+  <p>
+    This is the governance shift that should command CFO attention. Management Performance Measures — MPMs — are subtotals of income and expenses that management uses in <strong>public communications outside the financial statements</strong>: MD&A, investor presentations, earnings releases, press releases.
+  </p>
+
+  <p>
+    Common MPMs include adjusted EBITDA, adjusted operating profit, and adjusted profit or loss. For years, these figures lived in commentary, largely unverified and incomparable across companies. IFRS 18 changes this fundamentally: MPMs must now be <strong>disclosed in the financial statements</strong>, reconciled to the nearest IFRS-defined subtotal, with tax and minority interest effects of each adjustment made explicit — and they fall within the scope of the statutory audit.
+  </p>
+
+  <p>
+    Every metric used in investor communications — on the corporate website, in earnings calls, in annual reports — must be reviewed against the MPM definition. If it qualifies, it comes into the financial statements. Finance, legal, and investor relations teams need to be aligned on this well before 2027.
+  </p>
+
+  <!-- SECTION 3 -->
+  <div class="section-head">
+    <span class="section-number">03</span>
+    <span class="section-title">Retrospective Restatement — The 2026 Problem</span>
+  </div>
+
+  <p>
+    IFRS 18 requires retrospective restatement of comparative information. In plain terms: your 2027 financial statements must present 2026 figures using the new IFRS 18 format. This means 2026 books need to be tracked with 2027 presentation in mind — <em>now</em>. Finance teams that treat this as a 2027 problem will face unnecessary pressure when restating comparatives under time constraints.
+  </p>
+
+  <p>
+    ESMA has already reminded listed issuers that material accounting policies and management judgements arising from IFRS 18 application must be disclosed in both interim and annual 2027 financial statements. For groups with subsidiaries reporting across multiple jurisdictions, the coordination demands are non-trivial.
+  </p>
+
+  <!-- SECTION 4 -->
+  <div class="section-head">
+    <span class="section-number">04</span>
+    <span class="section-title">Four Practical Considerations</span>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <div class="card-title">Chart of Accounts & Systems</div>
+      <p>The three-category P&L requires income and expense items to be tagged at source. Many ERP configurations — including Oracle and SAP — will need structural changes to support the classification. This is a multi-month systems project, not a year-end adjustment.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">Contracts & Incentive Structures</div>
+      <p>Bonus plans, LTIPs, and performance share schemes tied to EBITDA or adjusted operating profit may be measuring a metric that will change in definition or presentation. Legal and HR need to review these agreements before the standard goes live.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">Investor Relations Alignment</div>
+      <p>IFRS 18 is an opportunity — and a risk — for IR strategy. Restated comparatives that look materially different from previously reported figures will attract analyst scrutiny. The narrative needs to be ready before the numbers land.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">Interim Financial Statements</div>
+      <p>MPM disclosures are required in interim reports to the same extent as in annual statements. Quarterly or half-year reporting processes need to be updated, not just year-end workflows.</p>
+    </div>
+  </div>
+
+  <!-- STRESS TEST -->
+  <div class="stress-box">
+    <ol>
+      <li>Have we mapped every metric used in public communications against the IFRS 18 MPM definition — and do we know which ones will need to enter the financial statements?</li>
+      <li>Does our current chart of accounts and ERP configuration support the three-category operating / investing / financing P&L split?</li>
+      <li>Are our 2026 financials being tracked in a way that allows clean retrospective restatement under IFRS 18 presentation when 2027 arrives?</li>
+    </ol>
+  </div>
+
+  <!-- CLOSING -->
+  <div class="closing">
+    <p>
+      IFRS 18 is not a compliance exercise to be delegated and filed. It touches income statement structure, KPI governance, audit scope, IR communication, and systems architecture simultaneously. The companies that treat this as a strategic finance project — starting now — will transition without disruption. Those that wait will restate in a hurry.
+    </p>
+    <p class="final-line">The standard will not wait. And neither should your preparation.</p>
+  </div>
+
+</div>
+
+<!-- AUTHOR CARD -->
+<div class="author-card">
+  <div class="author-card-inner">
+    <div class="author-card-avatar">AK</div>
+    <div>
+      <div class="author-card-name">Aswin Kumar ACA</div>
+      <div class="author-card-title">Senior Finance Leader · Chartered Accountant</div>
+      <div class="author-card-bio">15 years of finance leadership across MNCs and GCCs in pharma, manufacturing, logistics, and technology. Specialist in controllership, transfer pricing, and strategic finance. Based in Bengaluru.</div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  Finance Leadership Series &nbsp;·&nbsp; Bengaluru &nbsp;·&nbsp; 2026
+</div>
+
+</body>
+</html>
